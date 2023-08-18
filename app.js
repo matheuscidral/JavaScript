@@ -1,15 +1,16 @@
-import express from "express"
+import express from 'express'
+import { somar } from './exercicios/exercicio1.js'
 const app = express()
+app.use(express.json())
 
-app.get("/api/:userId/unknow/:personId", (req, res) => {
-    const nome = req.query.personId
-    const id = req.query.userId
+app.post('/api/exercicio1', (req, res) => {
+    const result = somar(req.body.num1, req.body.num2)
 
     res.json({
-        message: `queryParam ${nome}` + ` id ${id}`
+        message: `resultado: ${result}`,
     })
 })
 
 app.listen(3000, () => {
-    console.log("Example app listening on port 3000!")
+    console.log('Servidor na porta 3000')
 })
