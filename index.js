@@ -1,14 +1,14 @@
 import express from "express";
-import { somar } from "./exercicios/exercicio1.js";
-import { salario } from "./exercicios/exercicio2.js";
-import { mediaPesos } from "./exercicios/exercicio3.js";
-import { temperatura } from "./exercicios/exercicio4.js";
-import { distancia } from "./exercicios/exercicio5.js";
+import { somar } from "./exercicios/ex1.js";
+import { salario } from "./exercicios/ex2.js";
+import { mediaPesos } from "./exercicios/ex3.js";
+import { temperatura } from "./exercicios/ex4.js";
+import { distancia } from "./exercicios/ex5.js";
 
 const app = express();
 app.use(express.json());
 
-app.post("/api/exercicio1", (req, res) => {
+app.post("/api/ex1", (req, res) => {
   const result = somar(req.body.num1, req.body.num2);
 
   res.json({
@@ -16,7 +16,7 @@ app.post("/api/exercicio1", (req, res) => {
   });
 });
 
-app.post("/api/exercicio2", (req, res) => {
+app.post("/api/ex2", (req, res) => {
   const result = salario(req.body.ht, req.body.vh);
 
   res.json({
@@ -24,7 +24,7 @@ app.post("/api/exercicio2", (req, res) => {
   });
 });
 
-app.post("/api/exercicio3", (req, res) => {
+app.post("/api/ex3", (req, res) => {
   const result = mediaPesos(
     req.body.p1,
     req.body.p2,
@@ -38,7 +38,7 @@ app.post("/api/exercicio3", (req, res) => {
   });
 });
 
-app.post("/api/exercicio4", (req, res) => {
+app.post("/api/ex4", (req, res) => {
   const result = temperatura(req.body.c);
 
   res.json({
@@ -46,7 +46,7 @@ app.post("/api/exercicio4", (req, res) => {
   });
 });
 
-app.post("/api/exercicio5", (req, res) => {
+app.post("/api/ex5", (req, res) => {
   const result = distancia(req.body.m);
 
   res.json({
@@ -54,22 +54,19 @@ app.post("/api/exercicio5", (req, res) => {
   });
 });
 
-app.post("/api/exercicio6", (req, res) => {
+/*app.post("/api/ex6", (req, res) => {
   const { segundos } = req.body;
-
-  if (segundos === undefined || segundos < 0) {
-    return res
-      .status(400)
-      .json({
-        error:
-          "O campo 'segundos' é obrigatório e deve ser um número positivo válido.",
-      });
-  }
-
-  const result = tempo(segundos);
 
   res.json({
     message: `tempo: ${result}`,
+  });
+});*/
+
+app.post("/api/ex7", (req, res) => {
+  const result = tabuada(req.body.t);
+
+  res.json({
+    message: `tabuada: ${result}`,
   });
 });
 
