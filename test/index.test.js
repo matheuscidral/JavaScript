@@ -1,5 +1,5 @@
-import { describe, expect, it } from "@jest/globals";
-import { exercicio1 } from "../exercicios/exercicios-parte-um";
+const { describe, expect, it } = require("@jest/globals");
+const { somar } = require("../exercicios/ex1");
 
 describe("Testes do primeiro exercício", () => {
   // Executado antes de TODOS os testes
@@ -13,7 +13,7 @@ describe("Testes do primeiro exercício", () => {
   });
 
   it("Should sum two numbers", () => {
-    const result = exercicio1(1, 2);
+    const result = somar(1, 2);
 
     expect(result).toBe(3);
   });
