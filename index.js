@@ -4,6 +4,7 @@ import { salario } from "./exercicios/ex2.js";
 import { mediaPesos } from "./exercicios/ex3.js";
 import { temperatura } from "./exercicios/ex4.js";
 import { distancia } from "./exercicios/ex5.js";
+import { tabuada } from "./exercicios/ex5.js";
 
 const app = express();
 app.use(express.json());
@@ -63,7 +64,7 @@ app.post("/api/ex5", (req, res) => {
 });*/
 
 app.post("/api/ex7", (req, res) => {
-  const result = tabuada(req.body.t);
+  const result = tabuada(req.body.r);
 
   res.json({
     message: `tabuada: ${result}`,

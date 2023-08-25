@@ -1,5 +1,6 @@
-export function tabuada(t) {
+export function tabuada(t, r) {
     for(let i = 0; i < 11; i++) {
-        return (t + " x " + i + " = " + t * i);
+        console.log(r = (t + " x " + i + " = " + t * i));
     }
+    return r;
 }
