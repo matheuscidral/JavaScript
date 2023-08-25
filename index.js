@@ -64,7 +64,7 @@ app.post("/api/ex5", (req, res) => {
 });*/
 
 app.post("/api/ex7", (req, res) => {
-  const result = tabuada(req.body.r);
+  const result = tabuada(req.body.i, req.body.r);
 
   res.json({
     message: `tabuada: ${result}`,
