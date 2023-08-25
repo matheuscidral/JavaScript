@@ -1,10 +1,11 @@
-import express from "express";
-import { somar } from "./exercicios/ex1.js";
-import { salario } from "./exercicios/ex2.js";
-import { mediaPesos } from "./exercicios/ex3.js";
-import { temperatura } from "./exercicios/ex4.js";
-import { distancia } from "./exercicios/ex5.js";
-import { tabuada } from "./exercicios/ex8.js";
+const express = require ("express");
+const { somar } = require ("./exercicios/ex1.js");
+const { salario } = require ("./exercicios/ex2.js");
+const { mediaPesos } = require ("./exercicios/ex3.js");
+const { temperatura } = require ("./exercicios/ex4.js");
+const { distancia } = require ("./exercicios/ex5.js");
+//const { tempo } = require ("./exercicios/ex6.js");
+const { tabuada } = require ("./exercicios/ex8.js");
 
 const app = express();
 app.use(express.json());
@@ -55,13 +56,13 @@ app.post("/api/ex5", (req, res) => {
   });
 });
 
-app.post("/api/ex6", (req, res) => {
-  const { segundos } = req.body;
+/*app.post("/api/ex6", (req, res) => {
+  const { result } = req.body;
 
   res.json({
     message: `tempo: ${result}`,
   });
-});
+});*/
 
 app.post("/api/ex8", (req, res) => {
   const result = tabuada(req.body.t);

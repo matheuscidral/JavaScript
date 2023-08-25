@@ -1,3 +1,5 @@
-export function salario(ht, vh) {
+function salario(ht, vh) {
   return ht * vh;
 }
+
+module.exports = { salario };

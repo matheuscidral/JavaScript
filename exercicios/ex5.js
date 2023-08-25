@@ -1,3 +1,5 @@
-export function distancia(m) {
-    return m * 1.60934
+function distancia(m) {
+  return m * 1.60934;
 }
+
+module.exports = { distancia };
