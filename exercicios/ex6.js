@@ -1,7 +1,16 @@
-export function tempo(segundos) {
-    const horas = Math.floor(segundos / 3600)
-    const minutos = Math.floor((segundos % 3600) / 60)
-    const segundosRestantes = segundos % 60
+export function tempo(valorSegundos) {
+    let horas = 0;
+    let minutos = 0;
+    let segundos = valorSegundos;
 
-    return `${horas}h ${minutos}min ${segundosRestantes}s`
+    if(valorSegundos >= 3600) {
+        horas = valorSegundos / 3600;
+        minutos = (valorSegundos % 3600) / 60;
+        segundos = (valorSegundos % 3600) % 60;
+    } else if(valorSegundos >= 60) {
+        minutos = valorSegundos / 60;
+        segundos = valorSegundos % 60;
+    }
+
+    return `${parseInt(horas)}h, ${parseInt(minutos)}min, ${parseInt(segundos)}s`;
 }

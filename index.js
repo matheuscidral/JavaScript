@@ -4,7 +4,7 @@ import { salario } from "./exercicios/ex2.js";
 import { mediaPesos } from "./exercicios/ex3.js";
 import { temperatura } from "./exercicios/ex4.js";
 import { distancia } from "./exercicios/ex5.js";
-import { tabuada } from "./exercicios/ex5.js";
+import { tabuada } from "./exercicios/ex8.js";
 
 const app = express();
 app.use(express.json());
@@ -55,19 +55,20 @@ app.post("/api/ex5", (req, res) => {
   });
 });
 
-/*app.post("/api/ex6", (req, res) => {
+app.post("/api/ex6", (req, res) => {
   const { segundos } = req.body;
 
   res.json({
     message: `tempo: ${result}`,
   });
-});*/
+});
 
-app.post("/api/ex7", (req, res) => {
-  const result = tabuada(req.body.i, req.body.r);
+app.post("/api/ex8", (req, res) => {
+  const result = tabuada(req.body.t);
 
   res.json({
-    message: `tabuada: ${result}`,
+    message: "tabuada:",
+    results: result,
   });
 });
 
