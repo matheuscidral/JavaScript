@@ -1,11 +1,11 @@
-const express = require ("express");
-const { somar } = require ("./exercicios/ex1.js");
-const { salario } = require ("./exercicios/ex2.js");
-const { mediaPesos } = require ("./exercicios/ex3.js");
-const { temperatura } = require ("./exercicios/ex4.js");
-const { distancia } = require ("./exercicios/ex5.js");
+const express = require("express");
+const { somar } = require("./exercicios/ex1.js");
+const { salario } = require("./exercicios/ex2.js");
+const { mediaPesos } = require("./exercicios/ex3.js");
+const { temperatura } = require("./exercicios/ex4.js");
+const { distancia } = require("./exercicios/ex5.js");
 //const { tempo } = require ("./exercicios/ex6.js");
-const { tabuada } = require ("./exercicios/ex8.js");
+const { tabuada } = require("./exercicios/ex8.js");
 
 const app = express();
 app.use(express.json());
@@ -70,6 +70,27 @@ app.post("/api/ex8", (req, res) => {
   res.json({
     message: "tabuada:",
     results: result,
+  });
+});
+
+app.post("/api/ds1", (req, res) => {
+  const result = idade(req.body.num1);
+  res.status(200).json({
+    message: `Essa idade representa ${result}`,
+  });
+});
+
+app.post("/api/ds2", (req, res) => {
+  const result = troca(req.body.num1, req.body.num2);
+  res.status(200).json({
+    message: `A variáveis foram trocadas, ${result}`,
+  });
+});
+
+app.post("/api/ds3", (req, res) => {
+  const result = maior(req.body.num1, req.body.num2);
+  res.status(200).json({
+    message: `O maior numero é o: ${result}`,
   });
 });
 
