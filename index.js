@@ -1,5 +1,4 @@
 const express = require("express");
-const { maiorDeTres } = require("./desafios/ds4.js");
 const { somar } = require("./exercicios/ex1.js");
 const { salario } = require("./exercicios/ex2.js");
 const { mediaPesos } = require("./exercicios/ex3.js");
@@ -109,7 +108,7 @@ app.post("/api/ds4", (req, res) => {
   const result = maiorDeTres(req.body.num1, req.body.num2, req.body.num3);
 
   res.json({
-    message: `O maior numero é o: ${result}`,
+    message: `${result}`,
   });
 });
 
@@ -122,7 +121,8 @@ app.post("/api/ds5", (req, res) => {
 });
 
 app.post("/api/ds6", (req, res) => {
-  const result = anoBissexto(req.body.positivos, req.body.pares, req.body.multiplosDeSete);
+  const numeros = numerosNegativosDois(req.body.numeros);
+  const result = numeros;
 
   res.json({
     message: `${result}`,
