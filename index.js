@@ -1,4 +1,5 @@
 const express = require("express");
+const { maiorDeTres } = require("./desafios/ds4.js");
 const { somar } = require("./exercicios/ex1.js");
 const { salario } = require("./exercicios/ex2.js");
 const { mediaPesos } = require("./exercicios/ex3.js");
@@ -6,6 +7,11 @@ const { temperatura } = require("./exercicios/ex4.js");
 const { distancia } = require("./exercicios/ex5.js");
 //const { tempo } = require ("./exercicios/ex6.js");
 const { tabuada } = require("./exercicios/ex8.js");
+
+const { idade } = require("./desafios/ds1.js");
+const { troca } = require("./desafios/ds2.js");
+const { maior } = require("./desafios/ds3.js");
+const { maiorDeTres } = require("./desafios/ds4.js");
 
 const app = express();
 app.use(express.json());
@@ -89,6 +95,13 @@ app.post("/api/ds2", (req, res) => {
 
 app.post("/api/ds3", (req, res) => {
   const result = maior(req.body.num1, req.body.num2);
+  res.status(200).json({
+    message: `O maior numero é o: ${result}`,
+  });
+});
+
+app.post("/api/ds4", (req, res) => {
+  const result = maiorDeTres(req.body.num1, req.body.num2, req.body.num3);
   res.status(200).json({
     message: `O maior numero é o: ${result}`,
   });
