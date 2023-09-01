@@ -13,6 +13,7 @@ const { troca } = require("./desafios/ds2.js");
 const { maior } = require("./desafios/ds3.js");
 const { maiorDeTres } = require("./desafios/ds4.js");
 const { anoBissexto } = require("./desafios/ds5.js");
+const { numerosNegativosDois } = require("./desafios/ds6.js");
 
 const app = express();
 app.use(express.json());
@@ -117,6 +118,14 @@ app.post("/api/ds5", (req, res) => {
 
   res.json({
     message: `O ano: ${result}`,
+  });
+});
+
+app.post("/api/ds6", (req, res) => {
+  const result = anoBissexto(req.body.positivos, req.body.pares, req.body.multiplosDeSete);
+
+  res.json({
+    message: `${result}`,
   });
 });
 
