@@ -12,6 +12,7 @@ const { idade } = require("./desafios/ds1.js");
 const { troca } = require("./desafios/ds2.js");
 const { maior } = require("./desafios/ds3.js");
 const { maiorDeTres } = require("./desafios/ds4.js");
+const { anoBissexto } = require("./desafios/ds5.js");
 
 const app = express();
 app.use(express.json());
@@ -81,29 +82,41 @@ app.post("/api/ex8", (req, res) => {
 
 app.post("/api/ds1", (req, res) => {
   const result = idade(req.body.num1);
-  res.status(200).json({
+
+  res.json({
     message: `Essa idade representa ${result}`,
   });
 });
 
 app.post("/api/ds2", (req, res) => {
   const result = troca(req.body.num1, req.body.num2);
-  res.status(200).json({
+
+  res.json({
     message: `A variáveis foram trocadas, ${result}`,
   });
 });
 
 app.post("/api/ds3", (req, res) => {
   const result = maior(req.body.num1, req.body.num2);
-  res.status(200).json({
+
+  res.json({
     message: `O maior numero é o: ${result}`,
   });
 });
 
 app.post("/api/ds4", (req, res) => {
   const result = maiorDeTres(req.body.num1, req.body.num2, req.body.num3);
-  res.status(200).json({
+
+  res.json({
     message: `O maior numero é o: ${result}`,
+  });
+});
+
+app.post("/api/ds5", (req, res) => {
+  const result = anoBissexto(req.body.ano);
+
+  res.json({
+    message: `O ano: ${result}`,
   });
 });
 
