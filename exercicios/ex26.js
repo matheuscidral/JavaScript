@@ -1,11 +1,11 @@
-function mediaPesos(pesos) {
-  let media = 0;
+function mPesos(p) {
+  let m = 0;
 
   for (let i = 0; i < 5; i++) {
-    media += pesos[i];
+    m += p[i];
   }
 
-  return media / 5;
+  return m / 5;
 }
 
-module.exports = { mediaPesos };
+module.exports = { mPesos };
