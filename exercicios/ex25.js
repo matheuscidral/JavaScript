@@ -1,11 +1,11 @@
-function mediaAltura(qntdePessoas, alturas) {
-  let media = 0;
+function mAltura(qntdPessoas, h) {
+  let m = 0;
 
-  for (let i = 0; i < qntdePessoas; i++) {
-    media += alturas[i];
+  for (let i = 0; i < qntdPessoas; i++) {
+    m += h[i];
   }
 
-  return media / qntdePessoas;
+  return m / qntdPessoas;
 }
 
-module.exports = { mediaAltura };
+module.exports = { mAltura };

@@ -1,11 +1,11 @@
 function tabuadaRepeticao(num) {
-  const tabuada = [];
+  const t = [];
 
   for (let i = 1; i <= 10; i++) {
-    tabuada.push(`${num} x ${i} = ${num * i}`);
+    t.push(`${num} x ${i} = ${num * i}`);
   }
 
-  return tabuada;
+  return t;
 }
 
 module.exports = { tabuadaRepeticao };

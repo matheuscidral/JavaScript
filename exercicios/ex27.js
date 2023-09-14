@@ -1,16 +1,16 @@
-function pesoElevador(pesos) {
-  const pesoMaximo = 180;
-  let pesoTotal = 0;
+function pElevador(p) {
+  const pMaximo = 180;
+  let pTotal = 0;
 
-  for (let i = 0; i < pesos.length; i++) {
-    pesoTotal += pesos[i];
+  for (let i = 0; i < p.length; i++) {
+    pTotal += p[i];
   }
 
-  if (pesoTotal < 180) {
-    return `PESO MÁXIMO NÃO ATINGIDO (${pesoTotal} / ${pesoMaximo})`;
+  if (pTotal < 180) {
+    return `Limite de peso não atinjido (${pTotal} / ${pMaximo})`;
   } else {
-    return `PESO MÁXIMO ATINGIDO (${pesoTotal} / ${pesoMaximo})`;
+    return `Limite de peso atinjido (${pTotal} / ${pMaximo})`;
   }
 }
 
-module.exports = { pesoElevador };
+module.exports = { pElevador };

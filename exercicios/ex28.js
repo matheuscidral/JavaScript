@@ -1,17 +1,17 @@
-function numerosNegativos(numeros) {
-  let negativos = 0;
+function nNegativos(numeros) {
+  let n = 0;
 
   if (numeros.length > 10 || numeros.length < 10) {
-    return `VOCÊ DEVE DIGITAR 10 NÚMEROS. NÚMEROS DIGITADOS: ${numeros.length}`;
+    return `Números atuais: ${numeros.length}`;
   } else {
     for (let i = 0; i < 10; i++) {
       if (numeros[i] < 0) {
-        negativos++;
+        n++;
       }
     }
 
-    return `ENTRE OS NÚMEROS ENVIADOS, ${negativos} / 10 SÃO NEGATIVOS`;
+    return `Nos números: ${n} / 10 SÃO NEGATIVOS`;
   }
 }
 
-module.exports = { numerosNegativos };
+module.exports = { nNegativos };

@@ -1,4 +1,4 @@
-function nAleatorios() {
+function nAleatoriosMath() {
   let nGerados = [];
 
   nGerados[0] = Math.floor(Math.random() * 8);
@@ -10,4 +10,4 @@ function nAleatorios() {
   return nGerados;
 }
 
-module.exports = { nAleatorios };
+module.exports = { nAleatoriosMath };
