@@ -16,7 +16,7 @@ const { mediaPonderada } = require("./Exercicios/ex17.js")
 const { custoCarro } = require("./Exercicios/ex18.js")
 const { jurosCap } = require("./Exercicios/ex19.js")
 const { valorTotalIPI } = require("./Exercicios/ex20.js")
-const { velocidadeMulta } = require("./Exercicios/ex22.js")
+const { velMulta } = require("./Exercicios/ex22.js")
 const { escreverBatata } = require("./Exercicios/ex23.js")
 const { tabuadaRepeticao } = require("./Exercicios/ex24.js")
 const { mediaAltura } = require("./Exercicios/ex25.js")
@@ -24,7 +24,7 @@ const { mediaPesos } = require("./Exercicios/ex26.js")
 const { pesoElevador } = require("./Exercicios/ex27.js")
 const { numerosNegativos } = require("./Exercicios/ex28.js")
 const { numerosAleatorios } = require("./Exercicios/ex29.js")
-const { numerosAleatoriosEspecificos } = require("./Exercicios/ex30.js")
+const { nAleatorios } = require("./Exercicios/ex30.js")
 
 const { idade } = require("./desafios/ds1.js");
 const { troca } = require("./desafios/ds2.js");
