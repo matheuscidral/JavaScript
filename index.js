@@ -37,19 +37,31 @@ const app = express();
 app.use(express.json());
 
 app.post("/api/ex1", (req, res) => {
-  const result = somar(req.body.num1, req.body.num2);
-
-  res.status(200).json({
-    message: `result: ${result}`,
-  });
+  try {
+    const result = somar(req.body.num1, req.body.num2);   
+    res.status(200).json({
+      message: `somar: ${result}`,
+    }); 
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({
+      message: "Deu bosta",
+    });
+  } 
 });
 
 app.post("/api/ex2", (req, res) => {
-  const result = salario(req.body.ht, req.body.vh);
-
-  res.status(200).json({
-    message: `salario: ${result}`,
-  });
+  try {
+    const result = salario(req.body.ht, req.body.vh);
+    res.status(200).json({
+      message: `salario: ${result}`,
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({
+      message: "Deu bosta",
+    })
+  } 
 });
 
 app.post("/api/ex3", (req, res) => {
@@ -77,7 +89,7 @@ app.post("/api/ex5", (req, res) => {
 });
 
 app.post("/api/ex6", (req, res) => {
-  const { result } = req.body;
+  const { result } = tempo(req.body.valorSegundos);
 
   res.status(200).json({
     message: `tempo: ${result}`,
